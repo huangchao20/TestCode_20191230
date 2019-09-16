@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .door{
+            width: 800px;
+            height: 600px;
+            background: bisque;
+            border: 1px solid chartreuse;
+            margin: 100px auto;
+            background-size: 100% 100%;
+            position: center;
+            /*perspective: 1000px;*/
+        }
+
+        .door_l {
+            width: 50%;
+            height: 100%;
+            background-color: brown;
+            position: absolute;
+            top: 0;
+            transition: all 0.5s;
+            left: 0;
+            border-right: 1px solid #000000;
+            transform-origin: left;
+        }
+
+        .door_l::before {
+            content: "";
+            border: 1px solid #000000;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 50%;
+            border-radius: 50%;
+            transform: translateY(-50%);
+            right: 5px;
+        }
+
+        .door:hover .door_l {
+            transform: rotateY(-120deg);
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="door">
+    <div class="door_l"></div>
+    <div class="door_2"></div>
+</div>
+
+</body>
+</html>
